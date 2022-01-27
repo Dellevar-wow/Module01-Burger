@@ -317,12 +317,12 @@ footer{
     width: 274px;
     height: 173px;
     padding-left: 50px;
-    padding-top: 2px;
+    padding-top: 3px;
 }
 .footer-item-info {
     width: 337px;
-    padding-top: 2px;
-    padding-left: 19px;
+    padding-top: 3px;
+    padding-left: 16px;
 }
 .footer-title {
     font-size: 20px;
