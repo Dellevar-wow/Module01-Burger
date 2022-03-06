@@ -152,9 +152,9 @@ main {
     text-align:left;
     color: #FFFFFF;
     background-size: cover;
-    background-position: center center;
+    background-position: 0 center;
     padding: 63px 0px 119px 100px;
-    margin-bottom: 103px;    
+    margin-bottom: 83px;    
 }
 .banner-title {
     font-weight: 900;
@@ -198,12 +198,14 @@ main {
     text-decoration: none;
     text-transform: uppercase;
     border: 1px solid #FBB731;
+    transition: 0.2s;
 }
 .banner-link:hover {
     background-color: transparent;
     color: #FBB731;
 }
 .menu {
+    padding-top: 20px;
     padding-bottom: 73px;
 }
 .menu-header {
@@ -226,7 +228,9 @@ main {
     border-radius: 22px;
     font-size: 15px;
     color: #443737;
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     flex-basis: 279px;
     background-image: url(../image/arrow.svg);
     background-size: 12.79px 7.75px;
@@ -240,7 +244,7 @@ main {
 }
 .menu-grid-item {
     text-align: center;
-    padding-bottom: 31px;
+    padding-bottom: 29px;
 }
 .menu-grid-cover {
     width: 100%;
@@ -253,7 +257,8 @@ main {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 100%;
     height: 430px;
 }
@@ -274,9 +279,9 @@ main {
 .menu-grid-btn {
     background-color: #FBB731;
     border-radius: 5px;
-    padding: 8px 35px;
+    padding: 9px 35px;
     margin-top: 21px;
-    background-image: url(../menu/cart.svg);
+    background-image: url(../image/menu/cart.svg);
     background-repeat: no-repeat;
     background-position: 22% center;
     position: relative;
@@ -293,7 +298,8 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 100%;
     height: 18px;    
 }
@@ -302,8 +308,8 @@ main {
     font-size: 14px;
     text-transform: uppercase;
     color: #1E2F40;
-    padding-left: 22px;
     line-height: 1.4;
+    padding-left: 23px;
 }
 .additional-menu-header {
     margin-bottom: 37px;
@@ -317,6 +323,7 @@ footer{
 .footer-box {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 .footer-logo{
     width: 63px;
@@ -338,6 +345,7 @@ footer{
     text-transform: uppercase;
     margin-bottom: 19px;
     margin-top: 0;
+    line-height: 1.5;
 }
 .footer-tel {
     width: 180px;
@@ -384,6 +392,30 @@ footer{
     padding-left: 0;
     list-style-type: none;
 }
+.button-up {
+    background-color: #FBB731;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #1E2F40;
+    line-height: 1.4;
+    text-decoration: none;
+    padding: 5px 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 5px;
+    transition: 1s;
+}
+.button-up:hover {
+    background-color: #F37335;
+}
+.button-up.hidden {
+    opacity: 0;
+}
+.button-up.visible {
+    opacity: 1;
+}
 /* STYLE INDEX */
 .main {
     background: linear-gradient(180deg, #0C4C7B -100%, #1E2F40 100%);
@@ -396,6 +428,8 @@ footer{
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .content {
     color: #FAF9F9;
@@ -521,4 +555,469 @@ footer{
     font-weight: 700;
     margin-bottom: 13px;
     margin-top: 0;
+}
+
+/* Modal */
+
+.burger {
+    width: 34px;
+    height: 27px;
+    background-image: url(../image/burger.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}    
+.modal {
+    background-color: #FFF8DC;
+    max-width: 500px;
+    text-align: center;
+    position: absolute;
+    top: -400px;
+    left: 0;
+    right: 0;
+    margin: 20px auto 0;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+.modal .header-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 23px;
+    margin: 0;
+}
+.burger-close {
+    width: 22px;
+    height: 22px;
+    background-image: url(../image/close.svg);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+
+}
+
+/* Responsive */
+@media (max-width: 1001px), (min-width: 1001px){
+    .footer-list + .footer-list-tel {
+        display: none;
+    }    
+}
+@media (min-width: 1000px) {
+    .content {
+        flex: 0 0 722px;
+    }
+}
+@media (min-width: 766px) {
+    .header-burger {
+        display: none;
+    }
+}
+@media (max-width: 1000px) {
+    .container {
+        max-width: 738px;
+    }
+    .header-logo {
+        width: 150px;
+        height: 48px;
+        background-size: contain;
+    }
+    .header-nav {
+        gap: 22px;
+    }
+    .header-item {
+        flex-basis: 75.5%;
+    }
+    .bg {
+        margin-bottom: 72px;
+    }
+    .breadcrumbs {
+        padding-left: 11px;
+    }
+    .title {
+        padding-left: 9px;
+    }
+    .description {
+        padding-left: 11px;
+    }
+    .banner-box {
+        background-position: -82px center;
+        padding: 63px 40px 120px;
+    }
+    main {
+        padding-bottom: 132px;
+    }
+    .menu {
+        padding-top: 0;
+        padding-bottom: 61px;
+    }
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 19px
+    }
+    .menu-grid-text {
+        padding-left: 21px;
+    }
+    .additional-menu {
+        overflow: hidden;
+        height: 564px;
+    }
+    .additional-menu .menu-grid {
+        display: flex;
+        width: auto;        
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding-bottom: 50px;
+        gap: 20px 10px;
+    }
+    .additional-menu .menu-grid-item {
+        flex: 0 0 281px;
+    }
+    .additional-menu .menu-grid-cover,
+    .additional-menu .menu-grid-cover img {
+        height: 320px;
+        margin-left: -3px;
+    }
+    .additional-menu .menu-grid-title, .additional-menu .menu-grid-price {
+        max-width: 271px;
+    }
+    footer {
+        padding-top: 62px;
+    }
+    .footer-item-links {
+        padding-left: 34px;
+    }
+    .footer-item-info {
+        width: 283px;
+    }
+    .footer-title {
+        margin-bottom: 15px;
+    }
+    .footer-tel {
+        display: none;
+    }
+    .footer-list + .footer-list-tel {
+        display: block;
+    }
+
+     /* index html */
+
+     .content {
+         padding-top: 42px;
+         padding-bottom: 122px;
+     }
+     .content-title {         
+        margin-top: 0;
+     }
+     .content-title span {
+        font-size: 22px;
+        line-height: 1.4; 
+        margin-bottom: 7px;      
+    }
+    .content-title .h1-header {
+        font-size: 86px;
+        line-height: 1.2; 
+        margin-bottom: 18px;       
+    }
+    .content-text {        
+        font-size: 14px;
+        line-height: 140%;       
+        width: 385px;
+        margin-bottom: 34px;
+    }
+    .content-link, .promo a {       
+        padding: 17px 37px;       
+    }
+    .main img {
+        width: 500px;
+        right: -142px;
+        padding-top: 112px;
+    }
+    .wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .visual-bg {
+        width: 198px;        
+    }
+    .promo {
+        padding-top: 106px;
+        padding-bottom: 140px;
+    }
+    .promo-left {
+        padding: 44px 52px 44px 20px;
+    }
+    .promo-right {
+        padding: 60px 30px;
+    }
+    .promo-left, .promo-right {
+        height: 298px;
+    }
+    .free {
+        margin-bottom: 10px;
+    }
+    .promo-right .promo-description {
+        margin-bottom: 15px;
+    }
+
+}
+@media (max-width: 826px) {
+    /* index html */
+    .content {        
+        flex: 0 0 465px;        
+    }
+    .promo .wrapper {
+        gap: 15px;      
+    }
+}
+@media (max-width: 765px) {
+    nav {
+        display: none;
+    }
+    .header {
+        gap: 21px;
+    }    
+    .additional-menu .container {
+        padding-right: 0;
+    }
+    .button-up.visible {
+        display: none;
+    }
+}
+@media (max-width: 631px) {
+    .main .wrapper {
+        padding-right: 0;
+    }
+    .promo .wrapper {
+        padding-right: 15px;
+        margin-right: 0;
+        flex-direction: column;
+    }
+}
+@media (max-width: 567px) {    
+    main {
+        padding-bottom: 61px;
+    }
+    .header {
+        padding-top: 19px;
+        padding-bottom: 14px;
+    }
+    .header-logo {
+        width: 116px;
+        height: 37px;
+    }
+    .breadcrumbs a{
+        font-size: 14px;
+    }
+
+    .title {
+        font-size: 38px;
+    }
+    .description {
+        font-size: 12px;
+    }
+    .bg {
+        padding: 57px 0;
+        margin-bottom: 34px;
+    }
+    .banner-box {
+        background-position: 25% center;
+        padding: 35px 13px 53px;
+        margin-bottom: 58px;
+    }
+    .banner-title {
+        margin-top: 0;
+    }
+    .menu {
+        padding-bottom: 59px;
+    }
+    .menu-header {
+        margin-bottom: 30px;
+    }
+    .additional-menu-header {
+        margin-bottom: 30px;
+    }
+    .menu-title {
+        font-size: 27PX;
+    }
+    .menu-select {
+        font-size: 12px;
+        flex-basis: 136px;
+        padding: 13px 24px 13px 15px;
+        background-position: 91% center;
+    }
+    .menu-grid {
+        gap: 20px 15px;
+    }
+    .menu-grid-item {
+        padding: 0;
+    } 
+    .menu-grid-cover {
+        height: 56vw;
+    }
+    .menu-grid-cover img {
+        height: 100%;
+    }
+    .menu-grid-title {
+        font-size: 15px;  
+        margin-top: 8px;
+      }
+      .menu-grid-price {
+          font-size: 16px;
+          margin-top: 6px;
+      }
+      .menu-grid-btn {
+          padding: 10px 21px;
+          margin-top: 12px;
+          background-position: 16% center;
+      }
+    .additional-menu .menu-grid-cover {
+        height: 56vw;
+    }
+    .additional-menu .menu-grid-cover img {
+        height: 100%;
+    }
+    .additional-menu .menu-grid-item {
+        flex: 0 0 36vw;
+    }
+    .additional-menu {
+        height: 109vw;
+    }
+    .additional-menu .menu-grid {
+        padding-bottom: 23vw;
+    }
+    .additional-menu-header {
+        margin-bottom: 35px;
+    }
+    footer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .footer-list + .footer-list-tel {
+        display: none;
+    }
+    .footer-tel {
+        display: block;
+    }
+    .footer-box {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-areas: "logo tel" "link link" "info info";
+        gap: 0;
+    }
+    .footer-item:nth-child(1) {
+        grid-area: logo;
+    }
+    .footer-item-links {
+        grid-area: link;
+        padding-left: 0;
+        padding-top: 22px;
+        font-size: 15px;
+    }
+    .footer-item-info {
+        grid-area: info;
+        padding-top: 32px;
+        font-size: 15px;
+    }
+    .footer-tel {
+        grid-area: tel;
+        text-align: right;
+        width: auto;
+    } 
+
+    /* index html*/
+
+    .content {
+        padding-top: 45px;
+        padding-bottom: 167px;        
+    }
+    .content-title span {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    .content-title .h1-header {
+        font-size: 58px;
+        margin-bottom: 26px;
+    }
+    .content-text {
+        width: 277px;
+        margin-bottom: 29px;
+    }
+    .content {
+        flex: 0 0 305px;
+    }
+    .main img {
+        width: 460px;
+        right: -142px;
+        padding-top: 145px;
+    }  
+    
+}
+@media (max-width: 360px) {
+    .header-logo {
+        width: 116px;
+        height: 37px;
+        background-size: contain;
+    }
+    .visual-bg {        
+        display: none;
+    }
+    .main img {
+        width: 293px;
+        right: -81px;
+        padding-top: 329px;
+    }
+    .promo {
+        padding-top: 96px;
+        padding-bottom: 62px;
+    }
+    .promo .wrapper {
+        padding: 0;
+        gap: 22px;
+    }
+    .promo-left {
+        padding: 39px 58px 67px 15px;
+    }
+    .sale {
+        font-size: 14px;
+        padding: 5px 21px;
+        margin-bottom: 12px;
+    }
+    .cost {
+        font-size: 55px;
+        margin-bottom: 2px;
+    }
+    .promo-left .promo-description {
+        max-width: 297px;
+        font-size: 13px;
+        line-height: 156%;
+    }
+    .promo-right {
+        padding: 42px 12px;
+    }
+    .free {
+        margin-bottom: 15px;
+        font-size: 39px;
+    }
+    .promo-right .promo-description {
+        margin-bottom: 23px;
+        padding-left: 3px;
+        max-width: 266px;
+    }
+    .promo a {
+        padding: 17px 30px;
+        margin-bottom: 1px;
+    }
+    
+}
+@media (max-width: 320px) {
+    .banner-box {
+        background-position: 25% center;       
+    }
 }
