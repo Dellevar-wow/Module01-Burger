@@ -45,6 +45,7 @@ header {
     font-size: 20px;
     color: #443737;
     text-decoration: none;
+    transition: 0.2s;
 }
 .header-nav a:hover {
     color: #FFC725;
@@ -115,6 +116,7 @@ header {
     font-size: 15px;
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
+    transition: 0.2s;
 }
 .breadcrumbs a:hover {
     color: #FFC725;
@@ -288,9 +290,9 @@ main {
     position: relative;
     cursor: pointer;
     border: 1px solid #FBB731;
+    transition: 0.2s;
 }
 .menu-grid-btn:hover {
-    border: 1px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: #F37335;
 }
@@ -363,6 +365,7 @@ footer{
     color: #DEDEDE;
     text-decoration: none;
     font-weight: 400;
+    transition: 0.2s;
 }
 .footer-list a:hover {
     color: #FBB731;
@@ -385,6 +388,7 @@ footer{
     color: #FBB731;
     font-weight: 900;
     letter-spacing: 0.6px;
+    transition: 0.2s;
 }
 .footer-list-tel a:hover {
     color: #DEDEDE;
@@ -480,7 +484,14 @@ footer{
     font-size: 14px;
     font-weight: 700;
     border: 1px solid #FBB731;
+    transition: 0.2s;
 }
+.content-link:hover,
+.promo a:hover {
+    background-color: transparent;
+    color: #FBB731;
+}
+    
 .visual {
     flex-grow: 1;
     display: flex;
@@ -791,6 +802,43 @@ footer{
         display: none;
     }
 }
+@media (max-width: 737px) {
+    footer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .footer-list + .footer-list-tel {
+        display: none;
+    }
+    .footer-tel {
+        display: block;
+    }
+    .footer-box {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-areas: "logo tel" "link link" "info info";
+        gap: 0;
+    }
+    .footer-item:nth-child(1) {
+        grid-area: logo;
+    }
+    .footer-item-links {
+        grid-area: link;
+        padding-left: 0;
+        padding-top: 22px;
+        font-size: 15px;
+    }
+    .footer-item-info {
+        grid-area: info;
+        padding-top: 32px;
+        font-size: 15px;
+    }
+    .footer-tel {
+        grid-area: tel;
+        text-align: right;
+        width: auto;
+    }
+}
 @media (max-width: 631px) {
     .main .wrapper {
         padding-right: 0;
@@ -801,7 +849,7 @@ footer{
         flex-direction: column;
     }
 }
-@media (max-width: 567px) {    
+@media (max-width: 570px) {    
     main {
         padding-bottom: 61px;
     }
@@ -895,41 +943,6 @@ footer{
     }
     .additional-menu-header {
         margin-bottom: 35px;
-    }
-    footer {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-    .footer-list + .footer-list-tel {
-        display: none;
-    }
-    .footer-tel {
-        display: block;
-    }
-    .footer-box {
-        display: grid;
-        grid-template-columns: 30% 70%;
-        grid-template-areas: "logo tel" "link link" "info info";
-        gap: 0;
-    }
-    .footer-item:nth-child(1) {
-        grid-area: logo;
-    }
-    .footer-item-links {
-        grid-area: link;
-        padding-left: 0;
-        padding-top: 22px;
-        font-size: 15px;
-    }
-    .footer-item-info {
-        grid-area: info;
-        padding-top: 32px;
-        font-size: 15px;
-    }
-    .footer-tel {
-        grid-area: tel;
-        text-align: right;
-        width: auto;
     } 
 
     /* index html*/
